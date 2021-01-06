@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CryptoForm.css'
 
 export default class CryptoForm extends Component {
 
@@ -43,40 +44,39 @@ export default class CryptoForm extends Component {
         });
 
         return (
-            <div>
-            <img src="./logo.svg" alt="" style={{
-                height: 200,
-                width: 200
-            }}/>
-            <form onSubmit={this.handleSubmit}>
-                {/* The hashing algorithm selector. It is populated by a call to the API in App.js  */}
-                <label>
-                    Hashing algorithm
-                </label>
-                <select 
-                    name="hashAlgo"
-                    value={this.state.hashAlgo}
-                    onChange={this.handleInputChange}
-                >
-                    {algoOptions}
-                </select>
-                <label>
-                    Text to be hashed:
-                </label>
-                <textarea
-                    name="hashText" 
-                    value={this.state.hashText}
-                    onChange={this.handleInputChange}
-                    maxLength="300"
-                    />
-                <input type="submit" />
-            </form>
+            <section id="crypto-form-section">
 
-            <p>Hashed text in Base64 format:</p>
-            <p>{this.props.base64Text}</p>
-            <p>Hased text in hex format: </p>
-            <p>{this.props.hexText}</p>
-        </div>
+                <form onSubmit={this.handleSubmit} className="column">
+                    {/* The hashing algorithm selector. It is populated by a call to the API in App.js  */}
+                    <label>
+                        Hashing algorithm   
+                    </label>
+                    <select 
+                        name="hashAlgo"
+                        value={this.state.hashAlgo}
+                        onChange={this.handleInputChange}
+                    >
+                        {algoOptions}
+                    </select><br />
+                    <label>
+                        Text to be hashed:   
+                    </label>
+                    <textarea
+                        name="hashText" 
+                        value={this.state.hashText}
+                        onChange={this.handleInputChange}
+                        maxLength="300"
+                        />
+                    <input type="submit" />
+                </form>
+                <div className="column hash-text-container">
+                    <p>Hashed text in Base64 format:</p>
+                    <p>{this.props.base64Text}</p>
+                    <p>Hased text in hex format: </p>
+                    <p>{this.props.hexText}</p>
+                </div>
+                
+            </section>
         )
     }
 }

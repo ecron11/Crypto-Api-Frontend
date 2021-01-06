@@ -54,7 +54,6 @@ export default class App extends Component {
       this.setState({
         hashAlgos: data.Algorithms
         })
-      console.log(this.state.hashAlgos);
     });
 
     // .then(data => this.setState({
@@ -67,14 +66,21 @@ export default class App extends Component {
     return (
       <div className="App">
         <AppHeader />
-        <CryptoForm 
-          hashAlgos={this.state.hashAlgos}
-          base64Text={this.state.apiResponse.base64Digest} 
-          hexText={this.state.apiResponse.hexDigest} 
-          handleSubmit={this.getHash}
-        />
-        <AppAboutSection />
-        <HashAboutSection />
+        <main className="mainContainer">
+          {/* <img id="logo" src="./logo.svg" alt="" style={{
+                    height: 200,
+                    width: 200,
+                }}/> */}
+          <CryptoForm 
+            hashAlgos={this.state.hashAlgos}
+            base64Text={this.state.apiResponse.base64Digest} 
+            hexText={this.state.apiResponse.hexDigest} 
+            handleSubmit={this.getHash}
+          />
+          <HashAboutSection />
+          <AppAboutSection />
+        </main>
+        
       </div>
     )
   }
