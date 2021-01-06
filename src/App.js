@@ -26,7 +26,7 @@ export default class App extends Component {
         "hashAlgo": hashAlgo
      }
      
-     fetch("http://cryptoapi-env.eba-twhhdby2.us-east-2.elasticbeanstalk.com/api/createHash", {
+     fetch("https://crypto.erik-longuepee.com/api/createHash", {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -43,6 +43,13 @@ export default class App extends Component {
         })
      });
   }
+
+  //Gets a list of the hashing algorithms that can be used
+  // getHashAlgos() {
+  //   fetch("http://cryptoapi-env.eba-twhhdby2.us-east-2.elasticbeanstalk.com/api/checkHashes", {
+  //     method: "GET"
+  //   })
+  // }
 
   //calls the api to find valid hashing algorithms
   componentDidMount() {
