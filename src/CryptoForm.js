@@ -7,7 +7,7 @@ export default class CryptoForm extends Component {
 
         this.state = {
             hashText: "",
-            hashAlgo: ""
+            hashAlgo: "md5"
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
