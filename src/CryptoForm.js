@@ -19,8 +19,6 @@ export default class CryptoForm extends Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-
-        console.log(value);
         
         this.setState({
             [name]: value
@@ -33,6 +31,17 @@ export default class CryptoForm extends Component {
     }
 
     render() {
+        //create the options for the algorithm drop down
+        // `<option value='${element}'>${element}</option>`
+        const algoOptions = [];
+        this.props.hashAlgos.forEach(element => {
+            algoOptions.push(
+                <option value={element} key={element}>
+                        {element}
+                </option>
+            );
+        });
+
         return (
             <div>
             <img src="./logo.svg" alt="" style={{
@@ -40,15 +49,17 @@ export default class CryptoForm extends Component {
                 width: 200
             }}/>
             <form onSubmit={this.handleSubmit}>
+                {/* The hashing algorithm selector. It is populated by a call to the API in App.js  */}
                 <label>
                     Hashing algorithm
                 </label>
-                <input
+                <select 
                     name="hashAlgo"
-                    type="text" 
                     value={this.state.hashAlgo}
                     onChange={this.handleInputChange}
-                    />
+                >
+                    {algoOptions}
+                </select>
                 <label>
                     Text to be hashed:
                 </label>
@@ -56,6 +67,7 @@ export default class CryptoForm extends Component {
                     name="hashText" 
                     value={this.state.hashText}
                     onChange={this.handleInputChange}
+                    maxLength="300"
                     />
                 <input type="submit" />
             </form>

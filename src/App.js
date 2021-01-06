@@ -14,7 +14,8 @@ export default class App extends Component {
       apiResponse: {
         hexDigest: "",
         base64Digest: ""
-      }
+      },
+      hashAlgos: []
     }
   }
 
@@ -44,16 +45,22 @@ export default class App extends Component {
      });
   }
 
-  //Gets a list of the hashing algorithms that can be used
-  // getHashAlgos() {
-  //   fetch("http://cryptoapi-env.eba-twhhdby2.us-east-2.elasticbeanstalk.com/api/checkHashes", {
-  //     method: "GET"
-  //   })
-  // }
 
   //calls the api to find valid hashing algorithms
   componentDidMount() {
-    //this.callApi();
+    fetch("https://crypto.erik-longuepee.com/api/checkHashes")
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        hashAlgos: data.Algorithms
+        })
+      console.log(this.state.hashAlgos);
+    });
+
+    // .then(data => this.setState({
+    //   hashAlgos: data.Algorithms
+    // }));
+    
   }
 
   render() {
@@ -61,6 +68,7 @@ export default class App extends Component {
       <div className="App">
         <AppHeader />
         <CryptoForm 
+          hashAlgos={this.state.hashAlgos}
           base64Text={this.state.apiResponse.base64Digest} 
           hexText={this.state.apiResponse.hexDigest} 
           handleSubmit={this.getHash}
