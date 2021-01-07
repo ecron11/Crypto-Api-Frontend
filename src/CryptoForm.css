@@ -1,21 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
 #crypto-form-section {
+    margin-top: 0;
     display: flex;
     justify-content: space-around;
     align-items: stretch;
-
 }
 
+
 .column {
-    border-radius: 1rem;
-    margin: 1rem;
+    margin-top: 0;
     padding: 1rem;
-    width: 100%;
-    border: 2px solid rgb(58, 160, 92);
+    flex: 1;
+    max-width: 40vw;
+    background-color: #212836;
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: flex-start;
+    padding-bottom: 2rem;
 }
 
 .hash-text-container {
-    text-align: center;
+    text-align: left;
+    width: 100%;
 }
+
+input {
+    padding: 0;
+}
+
+.form-item {
+    background-color: #373d4a;
+    color: #e8e8e8;
+    width: 100%;
+    min-height: 2rem;
+    resize: none;
+    word-wrap: break-word;
+    margin-top: 0px;
+    margin-bottom: 0;
+    border: none;
+    overflow: wrap;
+}
+
+.submit-button {
+    margin-top: 1rem;
+    background-color: rgb(37, 107, 35);
+}
+
+.hashed-text {
+    color:rgb(80, 155, 105);
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+    line-height: 2rem;
+
+    font-family: 'Roboto Mono', monospace;
+    /* margin: auto; */
+}
+
+@media only screen and (max-width: 768px) {
+    #crypto-form-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .column {
+        max-width: 100%;
+        width: 100%;
+    }
+  }

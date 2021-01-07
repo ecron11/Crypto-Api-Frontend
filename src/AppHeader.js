@@ -6,7 +6,7 @@ export default function AppHeader() {
             textAlign: 'center'
         }}>
             <h1>Hasher</h1>
-            <h2>A demonstration of Cryptographic Hashing Algorithms</h2>
+            <h3>A demonstration of Cryptographic Hashing Algorithms</h3>
         </div>
     )
 }

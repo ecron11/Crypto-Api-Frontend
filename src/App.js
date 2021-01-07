@@ -12,8 +12,8 @@ export default class App extends Component {
 
     this.state = {
       apiResponse: {
-        hexDigest: "",
-        base64Digest: ""
+        hexDigest: "-",
+        base64Digest: "-"
       },
       hashAlgos: []
     }

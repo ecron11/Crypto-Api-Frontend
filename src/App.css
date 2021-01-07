@@ -6,6 +6,7 @@
 
 .AppHeader {
   margin-top: 0;
+  margin-bottom: 0;
   background-color: #37435b;
 }
 
@@ -18,4 +19,5 @@
   margin-right: auto;
   padding-left: 3rem;
   padding-right: 3rem;
+  margin-top: 0;
 }

@@ -48,32 +48,40 @@ export default class CryptoForm extends Component {
 
                 <form onSubmit={this.handleSubmit} className="column">
                     {/* The hashing algorithm selector. It is populated by a call to the API in App.js  */}
-                    <label>
+                    <p>
                         Hashing algorithm   
-                    </label>
+                    </p>
                     <select 
+                        className="form-item"
                         name="hashAlgo"
                         value={this.state.hashAlgo}
                         onChange={this.handleInputChange}
                     >
                         {algoOptions}
-                    </select><br />
-                    <label>
+                    </select>
+                    <p>
                         Text to be hashed:   
-                    </label>
-                    <textarea
+                    </p>
+                    <input
+                        id="hash-input"
+                        className="form-item"
                         name="hashText" 
                         value={this.state.hashText}
                         onChange={this.handleInputChange}
-                        maxLength="300"
+                        maxLength="30"
                         />
-                    <input type="submit" />
+                    <input
+
+                        className="form-item submit-button"
+                        type="submit"
+                        value=" Calculate Hash"
+                        />
                 </form>
                 <div className="column hash-text-container">
                     <p>Hashed text in Base64 format:</p>
-                    <p>{this.props.base64Text}</p>
+                    <p className="hashed-text form-item">{this.props.base64Text}</p>
                     <p>Hased text in hex format: </p>
-                    <p>{this.props.hexText}</p>
+                    <p className="hashed-text form-item">{this.props.hexText}</p>
                 </div>
                 
             </section>
