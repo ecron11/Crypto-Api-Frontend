@@ -6,7 +6,6 @@ export default function HashAboutSection() {
             <h2>
                 What is a hash?
             </h2>
-            <hr />
             <p>A hash is a type of cryptographic algorithm used often in different computer science applications 
                 for a variety of security purposes. It has a few key features:
             </p>

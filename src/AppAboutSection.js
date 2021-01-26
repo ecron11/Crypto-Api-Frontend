@@ -4,7 +4,6 @@ export default function AppAbout() {
     return (
         <section>
             <h2>About this App</h2>
-            <hr />
             <p>This is an application created by 
                 <a href="https://www.erik-longepee.com" target="_blank" rel="noreferrer"> Erik Longuepee </a>
                 to demonstrate different Hashing algorithms. It consists of a React front end, 
