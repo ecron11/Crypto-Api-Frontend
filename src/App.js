@@ -27,7 +27,7 @@ export default class App extends Component {
         "hashAlgo": hashAlgo
      }
      
-     fetch("http://crypto.erik-longuepee.com/api/createHash", {
+     fetch("https://crypto.erik-longuepee.com/api/createHash", {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -48,7 +48,7 @@ export default class App extends Component {
 
   //calls the api to find valid hashing algorithms
   componentDidMount() {
-    fetch("http://crypto.erik-longuepee.com/api/checkHashes") //get method is the default so method isn't specified
+    fetch("https://crypto.erik-longuepee.com/api/checkHashes") //get method is the default so method isn't specified
     .then(response => response.json())
     .then(data => {
       this.setState({
